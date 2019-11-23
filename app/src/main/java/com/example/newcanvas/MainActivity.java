@@ -70,10 +70,10 @@ public class MainActivity extends AppCompatActivity
         down = findViewById(R.id.buttonDown);
         change = findViewById(R.id.buttonColor);
         undo = findViewById(R.id.buttonUndo);
-        final DrawableViewConfig config = new DrawableViewConfig();
-        config.setStrokeColor(getResources().getColor(android.R.color.black));
+        config = new DrawableViewConfig();
         config.setShowCanvasBounds(true); // If the view is bigger than canvas, with this the user will see the bounds (Recommended)
         config.setStrokeWidth(20.0f);
+        config.setStrokeColor(getResources().getColor(android.R.color.black));
         config.setMinZoom(1.0f);
         config.setMaxZoom(3.0f);
         config.setCanvasHeight(1080);
@@ -134,8 +134,8 @@ public class MainActivity extends AppCompatActivity
                     @Override
                     public void onClick(DialogInterface dialog, int selectedColor, Integer[] allColors) {
                        // changeBackgroundColor(selectedColor);
-                      //  config.setStrokeColor(selectedColor);
-                        DefaultColor = selectedColor;
+                        config.setStrokeColor(selectedColor);
+
                       //  config.setStrokeColor(DefaultColor);
                     }
                 })
